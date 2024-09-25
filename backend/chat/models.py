@@ -23,6 +23,9 @@ class Conversation(models.Model):
     deleted_at = models.DateTimeField(null=True, blank=True)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
+    # New field for conversation summaries
+    summary = models.TextField(blank=True, null=True)  # Add the summary field here
+
     def __str__(self):
         return self.title
 
